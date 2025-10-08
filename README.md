@@ -1,6 +1,6 @@
 # 🏟️ Sports Social Media Analytics
 
-![CI](https://github.com/ajay1018/sports-social-media-analytics/actions/workflows/ci.yml/badge.svg?branch=main)
+![CI](https://github.com/ajay1018/sports-social-media-analytics/actions/workflows/ci.yml/badge.svg?branch=main&cache=1759897069)
 
 Portfolio demo that ingests sample social posts (JSON), transforms them into engagement metrics (by team & league),
 and renders a small Streamlit dashboard. Runnable extract/transform, **clean DE-style structure**, and diagrams.
