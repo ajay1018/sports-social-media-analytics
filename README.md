@@ -1,24 +1,24 @@
 # 🏟️ Sports Social Media Analytics
 
-Portfolio demo that ingests sample social posts (JSON), transforms them into engagement metrics (by team and league), and renders a small Streamlit dashboard. Runnable extract/transform with a clean DE-style structure.
+Portfolio demo that ingests sample social posts (JSON), transforms them into engagement metrics (by team & league), and renders a small Streamlit dashboard. Runnable extract/transform with a clean DE-style structure.
 
 ---
 
-## What this shows
-- Ingestion (stubbed extract) → transformation → simple reporting
-- Clear repo layout for Data Engineering work
-- Quick local run with minimal dependencies
+## ✅ What this shows
+- 📥 Ingestion (stubbed extract) → 🧮 transformation → 📊 simple reporting  
+- 🧱 Clear repo layout for Data Engineering work  
+- ⚙️ Quick local run with minimal dependencies
 
 ---
 
-## Tech Stack
-- Python (pandas)
-- JSON/CSV (local demo data)
-- Streamlit (optional dashboard)
+## 🧰 Tech Stack
+- 🐍 Python (pandas)
+- 🗂️ JSON/CSV (local demo data)
+- 🖥️ Streamlit (optional dashboard)
 
 ---
 
-## How to Run (Local)
+## 🚀 How to Run (Local)
 
 ```bash
 # 1) install
@@ -31,13 +31,13 @@ python src/transform/transform_metrics.py
 # 3) open the dashboard (optional)
 streamlit run dashboards/app.py
 
-Outputs
+📦 Outputs
 
 data/processed/team_metrics.csv — engagement by team
 data/processed/league_metrics.csv — engagement by league
 data/processed/posts_enriched.csv — posts with engagement column
 
-Project Structure
+📁 Project Structure
 
 sports-social-media-analytics/
 ├─ src/
@@ -53,7 +53,8 @@ sports-social-media-analytics/
 ├─ docs/
 ├─ requirements.txt
 └─ README.md
-Status
 
-Demo with sample data and runnable steps. Future improvements: API ingestion, simple sentiment, and CI to run transform.
+🔭 Status & Next
 
+Status: Demo with sample data and runnable steps.
+Next: API ingestion, simple sentiment (e.g., VADER), and lightweight CI to run transform.
