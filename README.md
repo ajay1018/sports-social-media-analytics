@@ -1,12 +1,40 @@
 # 🏟️ Sports Social Media Analytics
 
-Portfolio demo that ingests sample social posts (JSON), transforms them into engagement metrics (by team & league), and renders a small Streamlit dashboard. Runnable extract/transform with a clean DE-style structure.
+![CI](https://github.com/ajay1018/sports-social-media-analytics/actions/workflows/ci.yml/badge.svg?branch=main)
+
+Portfolio demo that ingests sample social posts (JSON), transforms them into engagement metrics (by team & league),
+and renders a small Streamlit dashboard. Runnable extract/transform, **clean DE-style structure**, and diagrams.
+
+---
+
+## 🧱 Architecture (Mermaid)
+```mermaid
+flowchart TD
+    SRC["Social APIs / JSON Dumps"] --> EXT["Extract (Python)"];
+    EXT --> TR["Transform (pandas)"];
+    TR --> OUT[("Processed CSVs")];
+    OUT --> DASH["Streamlit Dashboard"];
+```
+
+## 🔁 Data Flow (Mermaid)
+```mermaid
+sequenceDiagram
+    participant U as User/Runner
+    participant E as Extract
+    participant T as Transform
+    participant F as Files (CSV)
+
+    U->>E: run extract_local.py
+    E-->>F: write posts.json
+    U->>T: run transform_metrics.py
+    T-->>F: write team_metrics.csv, league_metrics.csv
+```
 
 ---
 
 ## ✅ What this shows
-- 📥 Ingestion (stubbed extract) → 🧮 transformation → 📊 simple reporting  
-- 🧱 Clear repo layout for Data Engineering work  
+- 📥 Ingestion (stubbed extract) → 🧮 transformation → 📊 reporting
+- 🧱 Organized repo for Data Engineering work
 - ⚙️ Quick local run with minimal dependencies
 
 ---
@@ -19,7 +47,6 @@ Portfolio demo that ingests sample social posts (JSON), transforms them into eng
 ---
 
 ## 🚀 How to Run (Local)
-
 ```bash
 # 1) install
 pip install -r requirements.txt
@@ -30,15 +57,19 @@ python src/transform/transform_metrics.py
 
 # 3) open the dashboard (optional)
 streamlit run dashboards/app.py
+```
 
-📦 Outputs
+---
 
-data/processed/team_metrics.csv — engagement by team
-data/processed/league_metrics.csv — engagement by league
-data/processed/posts_enriched.csv — posts with engagement column
+## 📦 Outputs
+- `data/processed/team_metrics.csv` — engagement by team
+- `data/processed/league_metrics.csv` — engagement by league
+- `data/processed/posts_enriched.csv` — posts with engagement column
 
-📁 Project Structure
+---
 
+## 📁 Project Structure
+```
 sports-social-media-analytics/
 ├─ src/
 │  ├─ extract/extract_local.py
@@ -53,8 +84,11 @@ sports-social-media-analytics/
 ├─ docs/
 ├─ requirements.txt
 └─ README.md
+```
 
-🔭 Status & Next
+---
 
-Status: Demo with sample data and runnable steps.
-Next: API ingestion, simple sentiment (e.g., VADER), and lightweight CI to run transform.
+## 🔭 Status & Next
+**Status:** Demo with sample data and runnable steps. 
+**Next:** add lightweight CI, simple sentiment (e.g., VADER), and optional DB load.
+
